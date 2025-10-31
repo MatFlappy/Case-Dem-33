@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Case_Dem_33.View.Windows;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,33 @@ namespace Case_Dem_33
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void LoginBtn_Click(object sender, RoutedEventArgs e)
+        {
+            var user = App.context.User.ToList().FirstOrDefault(u => u.Login == usernameTb.Text && u.Password == passwordPb.Password);
+
+            if (user != null) { 
+
+                MenuWindow menu = new MenuWindow();
+                menu.Show();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Неверное имя пользователя или пароль.");
+
+                usernameTb.Text = string.Empty;
+                passwordPb.Password = string.Empty;
+            }
+
+        }
+
+        private void regBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Registration reg = new Registration();
+            reg.Show();
+            this.Close();
         }
     }
 }

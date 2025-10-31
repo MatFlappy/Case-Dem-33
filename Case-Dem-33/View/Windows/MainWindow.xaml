@@ -36,15 +36,15 @@
             <TextBlock Text="Логин" FontSize="24"
                 Grid.Column="1" Grid.Row="2"/>
             
-            <TextBox Grid.Column="1" Grid.Row="3"/>
+            <TextBox x:Name="usernameTb" Grid.Column="1" Grid.Row="3"/>
 
             <TextBlock Text="Пароль" FontSize="24"
                 Grid.Column="1" Grid.Row="4"/>
-            
-            <PasswordBox Grid.Column="1" Grid.Row="5"/>
 
-            <Button Content="Войти" Background="#3c3c3c" Foreground="White" FontSize="16"
-                Grid.Column="1" Grid.Row="7"/>
+            <PasswordBox x:Name="passwordPb" Grid.Column="1" Grid.Row="5"/>
+
+            <Button x:Name="LoginBtn" Content="Войти" Background="#3c3c3c" Foreground="White" FontSize="16"
+                Grid.Column="1" Grid.Row="7" Click="LoginBtn_Click"/>
         </Grid>
         <!--Правая часть окна-->
         <Grid Grid.Column="1" Background="#3c3c3c">
@@ -69,12 +69,12 @@
 
             <TextBlock Text="Тест" Foreground="White" FontSize="16"
                        Grid.Column="1" Grid.Row="3"/>
-            
-            <Button Content="Зарегестрироваться" 
+
+            <Button x:Name="regBtn" Content="Зарегестрироваться" 
                     Background="Transparent" BorderBrush="White"
                     Foreground="White"
                     FontSize="16"
-                    Grid.Column="1" Grid.Row="5"/>
+                    Grid.Column="1" Grid.Row="5" Click="regBtn_Click"/>
         </Grid>
     </Grid>
 </Window>
