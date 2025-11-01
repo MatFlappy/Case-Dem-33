@@ -23,5 +23,17 @@ namespace Case_Dem_33.View.Windows
         {
             InitializeComponent();
         }
+
+        private void Reg_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow mw = new MainWindow();
+            mw.Show();
+            this.Close();
+        }
     }
 }

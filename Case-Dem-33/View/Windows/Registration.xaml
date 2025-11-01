@@ -31,21 +31,21 @@
                     <RowDefinition Height="1*"/>
                 </Grid.RowDefinitions>
                 <!--Элементы для правой части-->
-                <TextBlock Text="Авторизация" FontSize="36"
+                <TextBlock Text="Регистрация" FontSize="36"
             Grid.Column="1" Grid.Row="1"/>
 
                 <TextBlock Text="Логин" FontSize="24"
             Grid.Column="1" Grid.Row="2"/>
 
-                <TextBox Grid.Column="1" Grid.Row="3"/>
+                <TextBox x:Name="usernameTb" Grid.Column="1" Grid.Row="3"/>
 
                 <TextBlock Text="Пароль" FontSize="24"
             Grid.Column="1" Grid.Row="4"/>
 
-                <PasswordBox Grid.Column="1" Grid.Row="5"/>
+                <PasswordBox x:Name="passwordPb" Grid.Column="1" Grid.Row="5"/>
 
-                <Button Content="Зарегистрироваться" Background="#3c3c3c" Foreground="White" FontSize="16"
-            Grid.Column="1" Grid.Row="7"/>
+                <Button x:Name="Reg" Content="Зарегистрироваться" Background="#3c3c3c" Foreground="White" FontSize="16"
+            Grid.Column="1" Grid.Row="7" Click="Reg_Click"/>
             </Grid>
             <!--Правая часть окна-->
             <Grid Background="#3c3c3c">
@@ -75,7 +75,7 @@
                 Background="Transparent" BorderBrush="White"
                 Foreground="White"
                 FontSize="16"
-                Grid.Column="1" Grid.Row="5"/>
+                Grid.Column="1" Grid.Row="5" Click="Button_Click"/>
             </Grid>
         </Grid>
     </Grid>

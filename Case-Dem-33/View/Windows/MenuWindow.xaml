@@ -21,7 +21,12 @@
             <RowDefinition Height="0.1*"/>
         </Grid.RowDefinitions>
         <TextBox Grid.Column="1" Grid.Row="1" Margin="50"/>
-        <ListBox x:Name="Lst" Grid.Column="1" Grid.Row="3">
+        <ListBox x:Name="Lst" Grid.Column="1" Grid.Row="3" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+            <ListBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel HorizontalAlignment="Center"/>
+                </ItemsPanelTemplate>
+            </ListBox.ItemsPanel>
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <!--Разметка для ListBox-->
@@ -38,14 +43,15 @@
                             <RowDefinition Height="1*"/>
                         </Grid.RowDefinitions>
                         <!--Элементы для ListBox-->
-                        <Image Source="{Binding Photo}" Height="200" Width="200"/>
-                        <StackPanel Orientation="Vertical">
-                            <TextBlock Text="{Binding Name}"/>
-                            <TextBlock Text="{Binding Category.Title}"/>
+                        <Image Grid.Column="1" Source="{Binding Photo}" Height="200" Width="200"/>
+                        <StackPanel Orientation="Vertical" Grid.Column="1" Grid.Row="1">
+                            <TextBlock Foreground="White" Text="{Binding Name}" FontSize="36" TextWrapping="Wrap"/>
+                            <TextBlock Foreground="White" Text="{Binding Category.Title}" FontSize="14"/>
                         </StackPanel>
 
-                        <TextBlock Text="{Binding Descrition}"/>
-                        <TextBlock Text="{Binding Price}"/>
+                        <TextBlock Foreground="White" Grid.Column="1" Grid.Row="2" Text="{Binding Descrition}" TextWrapping="Wrap" FontSize="14"/>
+
+                        <TextBlock Foreground="White" Grid.Column="1" Grid.Row="3" Text="{Binding Price}" FontSize="24"/>
                     </Grid>
                 </DataTemplate>
             </ListBox.ItemTemplate>
